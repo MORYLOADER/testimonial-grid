@@ -1,0 +1,137 @@
+:root{
+    --font-family: 'Barlow Semi Condensed', sans-serif;
+    --nornal-weight: 500;
+    --bold-weight: 600;
+    --white: hsl(0, 0%, 100%);
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+    --dark-bluishblue: hsl(219, 29%, 14%);
+    --dark-grayishblue: hsl(217, 19%, 35%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--font-family);
+    font-size: 13px;
+    font-weight: var(--nornal-weight);
+    background-color: var(--light-gray);
+    line-height: 1.5;
+}
+
+.grid-container{
+    display: grid;
+    margin: 2rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 1em;
+    grid-template-areas: 
+         "section1 section1 section2 section5"
+         "section3 section4 section4 section5";
+}
+
+.section1{
+    grid-area: section1;
+    background-color: hsl(263, 55%, 52%);
+    background-image: url(images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 85% 0%;
+}
+.section2{
+    grid-area: section2;
+    background-color: hsl(217, 19%, 35%);
+}
+.section3{
+grid-area: section3;
+background-color:  hsl(0, 0%, 100%);
+}
+.section4{
+grid-area: section4;
+background-color: hsl(219, 29%, 14%);
+}
+.section5{
+grid-area: section5;
+background-color:  hsl(0, 0%, 100%);
+}
+
+.grid-container > div{
+    padding: 2em;
+    border-radius: 8px;
+}
+
+.section1 .name, .section2 .name, .section4 .name{
+    color: var(--light-gray);
+}
+
+.section1 .desc, .section2 .desc, .section4 .desc{
+    color: var(--light-gray);
+    opacity: 50%;
+}
+
+.section1 .speech, .section2 .speech, .section4 .speech{
+    color: var(--white);
+}
+
+.section1 .quote, .section2 .quote, .section4 .quote{
+    color: var(--light-gray);
+    opacity: 70%;
+}
+
+.section3 .name, .section5 .name{
+    color: var(--dark-grayishblue);
+}
+
+.section3 .desc, .section5 .desc{
+    color: var(--dark-grayishblue);
+    opacity: 50%;
+}
+
+.section3 .speech, .section5 .speech{
+    color: var(--dark-bluishblue);
+}
+
+.section3 .quote, .section5 .quote{
+   color: var(--dark-grayishblue);
+   opacity: 70%;
+}
+
+img{
+    border-radius: 50%;
+}
+
+.title{
+    display: flex;
+    margin-bottom: 1.5em;
+}
+
+.paragraph{
+    margin-left: 1em;
+}
+
+.name{
+    margin-bottom: 2px;
+}
+
+.speech{
+    font-weight: var(--bold-weight);
+    font-size: 17px;
+    margin-bottom: 1.5em;
+}
+
+
+@media screen and (max-width: 720px){
+    .grid-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1.5fr 1fr 1fr 1.4fr 1.5fr;
+        grid-template-areas: 
+        "section1"
+        "section2"
+        "section3"
+        "section4"
+        "section5";
+    }
+}
